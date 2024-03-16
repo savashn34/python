@@ -15,7 +15,7 @@ introduction()
 def entry():
     choice = input(">>> ").lower()
 
-    while choice not in ["e", "c", "p", "info"]:
+    while choice not in ["e", "d", "p", "info"]:
         print("")
         print("--- You entered an invalid command.")
         print("")
@@ -25,8 +25,8 @@ def entry():
         return info()
     elif choice == "e":
         return encrypt()
-    elif choice == "c":
-        return crack()
+    elif choice == "d":
+        return decrypt()
     elif choice == "p":
         return password()
 
@@ -50,7 +50,7 @@ def info():
     print("--- Output: {9J2BG$iE?t=MX8>HLIxRDvZ3sAK5|!4")
     print("")
     print("--- Type 'E' to encrypt a script.")
-    print("--- Type 'C' to crack an encrypted script.")
+    print("--- Type 'C' to decrypt an encrypted script.")
     print("--- Type 'P' to create a password.")
     print("")
     return entry()
@@ -245,11 +245,11 @@ def encrypt():
     print("")
     return entry()
 
-def crack():
+def decrypt():
     script = []
     list = []
     print("")
-    print("Type the encrypted text to crack: ")
+    print("Type the encrypted text to decrypt: ")
     print("")
     given = input(">>> ")
 
@@ -432,7 +432,7 @@ def crack():
 
     output = correct(list)
     print("")
-    print("Cracked script: ")
+    print("Decrypted script: ")
     print("")
     print(output)
     print("")
@@ -443,7 +443,7 @@ def password():
     script = []
     crypted = []
     print("")
-    print("Type to create a password:")
+    print("Type to create a password: ")
     print("")
     pgiven = input(">>> ").lower()
 
@@ -501,7 +501,7 @@ def password():
     length = len(crypted)
     if length < 32:
         missing_rate = 32 - length
-        missing_letter = ["9","!","s","M","5","|","t","R","2","?","v","Z","x","X","p","q","Q","z","y","Y"]
+        missing_letter = ["o","*","]","[","t","v","x","|",":",".","z","w","j","%","&","#","=","?","!","$"]
         crypted += missing_letter[:missing_rate]
 
     def replace(crypted):
