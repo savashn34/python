@@ -412,3 +412,4 @@ def crack():
     print(output)
     print("")
     return entry()
+entry()
