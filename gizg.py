@@ -37,13 +37,13 @@ def info():
     print("--- It's recommended to pick a keyword to use in your passwords. For example:")
     print("")
     print("--- Your keyword: mykeyword, platform to use: github, password: mykeywordforgithub")
-    print("--- Output: {9J2BG$iE?t=MX8>HLIxRDvZ3sAK5|!4")
+    print("--- Output: {oJ:BG[iE.x=M%8>HLIj|Dzw3]AKtv*4")
     print("")
     return entry()
 
 def gizg():
     script = []
-    crypted = []
+    encrypted = []
 
     for i in given:     
         script.append(i)
@@ -51,51 +51,51 @@ def gizg():
     for letter in script:
 
         if letter in ["e", "z"]:
-            crypted.append("A")
+            encrypted.append("A")
 
         elif letter in ["t", "q"]:
-            crypted.append("B")
+            encrypted.append("B")
 
         elif letter in ["a", "x"]:
-            crypted.append("C")
+            encrypted.append("C")
 
         elif letter in ["o", "j"]:
-            crypted.append("D")
+            encrypted.append("D")
 
         elif letter in ["i", "k"]:
-            crypted.append("E")
+            encrypted.append("E")
 
         elif letter in ["n", "v"]:
-            crypted.append("F")
+            encrypted.append("F")
 
         elif letter in ["s", "b"]:
-            crypted.append("G")
+            encrypted.append("G")
 
         elif letter in ["h", "p"]:
-            crypted.append("H")
+            encrypted.append("H")
 
         elif letter in ["r", "y"]:
-            crypted.append("I")
+            encrypted.append("I")
 
         elif letter in ["d", "g"]:
-            crypted.append("J")
+            encrypted.append("J")
 
         elif letter in ["l", "f"]:
-            crypted.append("K")
+            encrypted.append("K")
 
         elif letter in ["c", "w"]:
-            crypted.append("L")
+            encrypted.append("L")
 
         elif letter in ["u", "m"]:
-            crypted.append("M")
+            encrypted.append("M")
 
-    length = len(crypted)
+    length = len(encrypted)
     if length < 32:
         missing_rate = 32 - length
-        missing_letter = ["9","!","s","M","5","|","t","R","2","?","v","Z","x","X","p","q","Q","z","y","Y"]
-        crypted += missing_letter[:missing_rate]
+        missing_letter = ["o","*","]","[","t","v","x","|",":",".","z","w","j","%","&","#","=","?","!","$"]
+        encrypted += missing_letter[:missing_rate]
 
-    def replace(crypted):
+    def replace(encrypted):
         a_counter = 0
         b_counter = 0
         c_counter = 0
@@ -111,7 +111,7 @@ def gizg():
         m_counter = 0
         new_script = []
 
-        for i in crypted:
+        for i in encrypted:
             if i == "A":
                 a_counter += 1
                 if a_counter == 2:
@@ -311,7 +311,7 @@ def gizg():
 
         return (new_script)
     
-    new_script = replace(crypted)
+    new_script = replace(encrypted)
 
     def replace_array(new_script, new_places):
         new_list = [""] * len(new_script)
