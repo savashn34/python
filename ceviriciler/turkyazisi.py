@@ -145,7 +145,7 @@ def cevir():
                 tumce += '𐰕'
 
         tumce.pop()
-        tumce = tumce[::-1]
+        tumce = tumce[::-1] ## PYDROID 3 İLE KULLANILMASI DURUMUNDA BU DİZE SİLİNMELİDİR.
         tumce = "".join(tumce)
         print(tumce)
 cevir()
