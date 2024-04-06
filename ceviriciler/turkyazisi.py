@@ -85,7 +85,7 @@ def cevir():
                 tumce += '𐰰'
             elif girdi[i] == 'ı' and girdi[i+1] in ['k', 'h'] or girdi[i] in ['k', 'h'] and girdi[i+1] == 'ı' and girdi[i-1] == ' ' or girdi[i] == 'ı' and girdi[i+1] == 'ı' and girdi[i] == girdi[0]:
                 tumce += '𐰶'
-            elif girdi[i] == 'i' and girdi[i+1] == 'ç' or girdi[i] == 'ç' and girdi[0] == 'ç' and girdi[i+1] == 'i' or girdi[i] == 'ç' and girdi[i+1] == 'i' and girdi[i-1] == ' ': # İÇ SORUNSUZ ÇALIŞMAKTADIR.
+            elif girdi[i] == 'i' and girdi[i+1] == 'ç' or girdi[i] == 'ç' and girdi[0] == 'ç' and girdi[i+1] == 'i' or girdi[i] == 'ç' and girdi[i+1] == 'i' and girdi[i-1] == ' ':
                 tumce += '𐰱'
 
             ## SESSİZLER
