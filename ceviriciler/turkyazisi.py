@@ -21,26 +21,49 @@ def cevir():
 
         for i in range(len(girdi)):
 
+            ## DİĞER
+
+            if girdi[i] == ' ':
+                tumce += ' '
+            elif girdi[i] == '.':
+                tumce += '.'
+            elif girdi[i] == ',':
+                tumce += ','
+            elif girdi[i] == '?':
+                tumce += '?'
+            elif girdi[i] == '!':
+                tumce += '!'
+            elif girdi[i] == ':':
+                tumce += ':'
+            elif girdi[i] == ';':
+                tumce += ';'
+            elif girdi[i] == '-':
+                tumce += '-'
+            elif girdi[i] == '(':
+                tumce += '('
+            elif girdi[i] == ')':
+                tumce += ')'
+
             ## A-E SESLİSİ
 
-            if girdi[i] in ['a', 'e'] and girdi[i+1] == 'm' and girdi[i+2] == 'a' and girdi[i+3] == 'm' and not girdi[i-1] == 'y':
+            elif girdi[i] in ['a', 'e'] and girdi[i+1] == 'm' and girdi[i+2] == 'a' and girdi[i+3] == 'm' and not girdi[i-1] == 'y':
                 tumce += '𐰀'
             elif girdi[i] in ['a', 'e'] and girdi[i+1] == 'm' and girdi[i+2] == 'a' and girdi[i+3] == 'z':
                 tumce += '𐰀'
             elif girdi[i] in ['a', 'e'] and girdi[i+1] == 'm' and girdi[i+3] == 'y' and girdi[i+5] == 'z':
                 tumce += '𐰀'
-            elif girdi[i] in ['a', 'e'] and girdi[i+1] == ' ':
+            elif girdi[i] in ['a', 'e'] and girdi[i+1] in [' ', '.', ',', '!', '?', ':', ';', '(', '-']:
                 tumce += '𐰀'
 
             ## DİĞER SESLİLER
                 
-            elif girdi[i] in ['ö', 'ü'] and girdi[i+1] == ' ' or girdi[i] in ['ö', 'ü'] and girdi[i-1] == ' ' and not girdi[i+1] == 'k' or girdi[i] in ['ö', 'ü'] and girdi[i-1] in sessizler and girdi[i-2] == ' ':
+            elif girdi[i] in ['ö', 'ü'] and girdi[i+1]  in [' ', '.', ',', '!', '?', ':', ';', '(', '-'] or girdi[i] in ['ö', 'ü'] and girdi[i-1]  in [' ', '.', ',', '!', '?', ':', ';', '(', '-'] and not girdi[i+1] == 'k' or girdi[i] in ['ö', 'ü'] and girdi[i-1] in sessizler and girdi[i-2]  in [' ', '.', ',', '!', '?', ':', ';', '(', '-']:
                 tumce += '𐰇'
-            elif girdi[i] in ['o', 'u'] and girdi[i+1] == ' ' or girdi[i] in ['o', 'u'] and girdi[i-1] == ' ' and not girdi[i+1] == 'k' or girdi[i] in ['o', 'u'] and girdi[i-1] in sessizler and girdi[i-2] == ' ':
+            elif girdi[i] in ['o', 'u'] and girdi[i+1]  in [' ', '.', ',', '!', '?', ':', ';', '(', '-'] or girdi[i] in ['o', 'u'] and girdi[i-1]  in [' ', '.', ',', '!', '?', ':', ';', '(', '-'] and not girdi[i+1] == 'k' or girdi[i] in ['o', 'u'] and girdi[i-1] in sessizler and girdi[i-2]  in [' ', '.', ',', '!', '?', ':', ';', '(', '-']:
                 tumce += '𐰆'
-            elif girdi[i] == 'ı' and girdi[i+1] == ' ' or girdi[i] == 'ı' and girdi[i-1] == ' ' and not girdi[i+1] == 'k' or girdi[i] == 'ı' and girdi[i-1] in sessizler and girdi[i-2] == ' ' and not girdi[i+1] == 'k':
+            elif girdi[i] == 'ı' and girdi[i+1]  in [' ', '.', ',', '!', '?', ':', ';', '(', '-'] or girdi[i] == 'ı' and girdi[i-1]  in [' ', '.', ',', '!', '?', ':', ';', '(', '-'] and not girdi[i+1] == 'k' or girdi[i] == 'ı' and girdi[i-1] in sessizler and girdi[i-2]  in [' ', '.', ',', '!', '?', ':', ';', '(', '-'] and not girdi[i+1] == 'k':
                 tumce += '𐰃'
-            elif girdi[i] == 'i' and girdi[i+1] == ' ' or girdi[i] == 'i' and girdi[i-1] == ' ' and not girdi[i+1] == 'ç' or girdi[i] == 'i' and girdi[i-1] in sessizler and girdi[i-2] == ' ' and not girdi[i+1] == 'ç':
+            elif girdi[i] == 'i' and girdi[i+1]  in [' ', '.', ',', '!', '?', ':', ';', '(', '-'] or girdi[i] == 'i' and girdi[i-1]  in [' ', '.', ',', '!', '?', ':', ';', '(', '-'] and not girdi[i+1] == 'ç' or girdi[i] == 'i' and girdi[i-1] in sessizler and girdi[i-2]  in [' ', '.', ',', '!', '?', ':', ';', '(', '-'] and not girdi[i+1] == 'ç':
                 tumce += '𐰃'
             elif girdi[i] in ['o', 'u'] and girdi[i-1] == 'y' and girdi[i+1] == 'r':
                 tumce += '𐰆'
@@ -67,8 +90,6 @@ def cevir():
 
             ## SESSİZLER
 
-            elif girdi[i] == ' ':
-                tumce += ' '
             elif girdi[i] in ['b', 'v'] and girdi[0] in ['b', 'v'] and girdi[i+1] in ['e', 'i', 'ö', 'ü'] or girdi[i] in ['b', 'v'] and girdi[i-1] in ['e', 'i', 'ö', 'ü'] or girdi[i] in ['b', 'v'] and girdi[i-1] in sessizler and girdi[i+1] in ['e', 'i', 'ö', 'ü'] or girdi[i] in ['b', 'v'] and girdi[i-1] == ' ' and girdi[i+1] in ['e', 'i', 'ö', 'ü']:
                 tumce += '𐰋'
             elif girdi[i] in ['b', 'v'] and girdi[0] in ['b', 'v'] and girdi[i+1] in ['a', 'ı', 'o', 'u'] or girdi[i] in ['b', 'v'] and girdi[i-1] in ['a', 'ı', 'o', 'u'] or girdi[i] in ['b', 'v'] and girdi[i-1] in sessizler and girdi[i+1] in ['a', 'ı', 'o', 'u'] or girdi[i] in ['b', 'v'] and girdi[i-1] == ' ' and girdi[i+1] in ['a', 'ı', 'o', 'u']:
