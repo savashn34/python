@@ -1,3 +1,12 @@
+def giris():
+    print("__________________________________________")
+    print("")
+    print("------ Copyright © 2024 Savas Sahin ------")
+    print("__________________________________________")
+    print("")
+
+giris()
+
 def cevir():
     
     while True:
@@ -25,10 +34,6 @@ def cevir():
 
             ## DİĞER SESLİLER
                 
-            # İLK ADIM SÖZCÜK SONUNA DEĞİNİR.
-            # İKİNCİ ADIM SÖZCÜK BAŞINA DEĞİNİR. SONRAKİ SESİN K OLMADIĞINI YOKLAR.
-            # ÜÇÜNCÜ ADIM İLK SESSİZDEN SONRA GELEN Ö-Ü SESİNİ YOKLAR. BİR ADIM ÖNCESİ SESSİZSE, SESSİZDEN ÖNCE DE BOŞLUK GELİYORSA YAZ DER.
-                
             elif girdi[i] in ['ö', 'ü'] and girdi[i+1] == ' ' or girdi[i] in ['ö', 'ü'] and girdi[i-1] == ' ' and not girdi[i+1] == 'k' or girdi[i] in ['ö', 'ü'] and girdi[i-1] in sessizler and girdi[i-2] == ' ':
                 tumce += '𐰇'
             elif girdi[i] in ['o', 'u'] and girdi[i+1] == ' ' or girdi[i] in ['o', 'u'] and girdi[i-1] == ' ' and not girdi[i+1] == 'k' or girdi[i] in ['o', 'u'] and girdi[i-1] in sessizler and girdi[i-2] == ' ':
@@ -50,11 +55,6 @@ def cevir():
                 tumce += '𐰨'
             
             ## BİLEŞİK ÜNSÜZLER
-                
-            # BİRİNCİ DURUM i'DEN ÖNCE ç GELİP GELMEDİĞİNİ YOKLAR.
-            # İKİNCİ DURUM ç'NİN SÖZ BAŞINDA OLUP OLMADIĞINI YOKLAR.
-            # ÜÇÜNCÜ DURUM ç'NİN SÖZCÜK BAŞINDA OLUP OLMADIĞINI YOKLAR.
-            # DÖRDÜNCÜ DURUM i'NİN SÖZCÜK BAŞINDA OLUP OLMADIĞINI YOKLAR.
             
             elif girdi[i] in ['o', 'u'] and girdi[i+1] in ['k', 'h'] or girdi[i] in ['k', 'h'] and girdi[i+1] in ['o', 'u'] and girdi[i-1] == ' ' or girdi[i] in ['k', 'h'] and girdi[i+1] in ['o', 'u'] and girdi[i] == girdi[0]:
                 tumce += '𐰸'
@@ -109,15 +109,6 @@ def cevir():
                 tumce += '𐰚'
             elif girdi[i] in ['k', 'h'] and girdi[0] in ['k', 'h'] and girdi[i+1] in ['a', 'ı', 'o', 'u'] or girdi[i] in ['k', 'h'] and girdi[i-1] == 'a' or girdi[i] in ['k', 'h'] and girdi[i-1] in sessizler and girdi[i+1] in ['a', 'ı', 'o', 'u'] or girdi[i] in ['k', 'h'] and girdi[i-1] == ' ' and girdi[i+1] in ['a', 'ı', 'o', 'u']:
                 tumce += '𐰴'
-
-            # elif girdi[i] in ['k', 'h'] and girdi[i] == girdi[0] and girdi[i+1] in ['e', 'i', 'ö', 'ü'] or girdi[i] in ['k', 'h'] and girdi[i-1] == ' ' and girdi[i+1] in ['e', 'i'] or girdi[i] in ['k', 'h'] and girdi[i-1] in sessizler and girdi[i+1] in ['e', 'i', 'ö', 'ü'] or girdi[i] in ['k', 'h'] and girdi[i-1] in ['e', 'i', 'ö', 'ü'] and girdi[i+1] == ' ':
-            #     tumce += '𐰚'
-            # elif girdi[i] in ['k', 'h'] and girdi[i] == girdi[0] and girdi[i+1] in ['a', 'ı', 'o', 'u'] or girdi[i] in ['k', 'h'] and girdi[i-1] == ' ' and girdi[i+1] in ['a', 'ı'] or girdi[i] in ['k', 'h'] and girdi[i-1] in sessizler and girdi[i+1] in ['a', 'ı', 'o', 'u'] or girdi[i] in ['k', 'h'] and girdi[i-1] in ['e', 'i', 'ö', 'ü'] and girdi[i+1] == ' ':
-            #     tumce += '𐰴'
-
-            # İLK ADIM TÜMCE BAŞINI YOKLAR.
-            # İKİNCİ ADIM SÖZCÜK BAŞINI YOKLAR.
-            # ÜÇÜNCÜ ADIM İKİ SESSİZİN YAN YANA GELME DURUMUNU YOKLAR
 
             ## DEĞİŞMEZLER
 
